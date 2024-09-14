@@ -1,0 +1,482 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Raleway:wght@400;500;600&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+:root {
+  overflow-x: hidden;
+  width: 100vw;
+  scroll-behavior: smooth;
+  background-color: #111111;
+  color: #fafafa;
+  font-size: 16px;
+}
+:root *::-webkit-scrollbar {
+  width: calc(0.25vw + 0.25vh);
+  height: calc(0.25vw + 0.25vh);
+}
+:root *::-webkit-scrollbar-button {
+  background-color: #292929;
+}
+:root *::-webkit-scrollbar-track {
+  background-color: #292929;
+}
+:root *::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #343434;
+}
+
+header {
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: calc(1vw + 6vh);
+  padding: calc(0.6vw + 0.3vh) calc(1vw + 0.5vh);
+  box-sizing: border-box;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 -3px 4px -4px rgba(255, 255, 255, 0.2078431373);
+  background: rgba(255, 255, 255, 0.0823529412);
+  transition: backdrop-filter 0.3s;
+}
+header:hover {
+  backdrop-filter: blur(8px);
+  transition: backdrop-filter 0.3s;
+}
+header .logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  color: #fafafa;
+  font: 400 calc(22px + 4 * (100vw - 300px) / 700) "Cinzel", serif;
+  letter-spacing: 1px;
+}
+header .logo div {
+  margin: 1.5vh calc(1vw + 0.5vh) 0 0;
+}
+header .logo div img {
+  height: calc(0.6666666667vw + 4vh);
+  width: calc(0.6666666667vw + 4vh);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 15px #fafafa);
+}
+header nav {
+  width: 50%;
+}
+header nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header nav ul li {
+  margin-right: 3vw;
+}
+header nav ul li a {
+  font: 500 calc(10px + 4 * (100vw - 300px) / 700) "Raleway", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fafafa;
+  transition: color 0.3s;
+}
+header nav ul li a:hover {
+  color: #b7b7b7;
+  transition: color 0.3s;
+}
+header .mobile {
+  display: none;
+}
+
+main aside {
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(10vw + 10vh);
+  height: calc(100vh - (1vw + 6vh));
+  margin: calc(1vw + 6vh) 0 0 0;
+  padding: calc(2vw + 4vh) 1vw;
+  box-sizing: border-box;
+  background: #1a1a1a;
+}
+main aside ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+main aside ul li ul {
+  margin-left: 5%;
+}
+main aside ul li ul li {
+  margin: 2vh 0 0 2vh;
+}
+main aside a {
+  font: 500 calc(10px + 4 * (100vw - 300px) / 700) "Raleway", sans-serif;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #b7b7b7;
+  transition: color 0.3s;
+}
+main aside a:hover {
+  color: #fafafa;
+  transition: color 0.3s;
+}
+main aside figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(1vw + 1vh);
+  transform: translateY(calc(1vw + 0.5vh));
+}
+main aside figure img {
+  width: calc(1vw + 3vh);
+  height: calc(1vw + 3vh);
+  object-fit: cover;
+  border-radius: 50%;
+  filter: brightness(70%) grayscale(0.25);
+}
+main aside figure figcaption {
+  font: 400 calc(10px + 4 * (100vw - 300px) / 700) "Raleway", sans-serif;
+  transform: translateY(calc(0.3vw + 0.3vh));
+}
+main article {
+  margin-left: calc(10vw + 10vh);
+}
+main article section {
+  width: 85vw;
+  box-sizing: border-box;
+}
+main article section:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: calc(5vw + 10vh) calc(5vw + 0.25vh);
+  background: linear-gradient(to right, #111111 calc(32vw - 20vh), transparent, #111111 calc(68vw + 20vh)), url("./src/assets/background.jpeg");
+  background-position: center;
+  box-shadow: inset 0 -8vh 4vh -4vh #111111;
+}
+main article section:nth-child(1) h2 {
+  display: block;
+  width: 50%;
+  margin-bottom: calc(1vw + 2vh);
+  font: 400 calc(32px + 4 * (100vw - 300px) / 700) "Cinzel", serif;
+}
+main article section:nth-child(1) p {
+  display: block;
+  width: 40%;
+  font: 400 calc(16px + 4 * (100vw - 300px) / 700)/calc(32px + 4 * (100vw - 300px) / 700) "Raleway", sans-serif;
+}
+main article section:nth-child(2) {
+  padding: calc(1vw + 8vh) calc(5vw + 0.25vh);
+}
+main article section:nth-child(2) h2 {
+  display: block;
+  width: 100%;
+  margin-bottom: calc(2vw + 4vh);
+  font: 400 calc(32px + 4 * (100vw - 300px) / 700) "Cinzel", serif;
+  text-align: center;
+}
+main article section:nth-child(2) .symbolism-wrap .symbolism {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: calc(5vw + 0.25vh);
+  border-bottom: 2px solid #343434;
+}
+main article section:nth-child(2) .symbolism-wrap .symbolism h3 {
+  display: block;
+  width: 70%;
+  margin-bottom: calc(0.5vw + 1vh);
+  font: 400 calc(22px + 4 * (100vw - 300px) / 700) "Cinzel", serif;
+}
+main article section:nth-child(2) .symbolism-wrap .symbolism p {
+  display: block;
+  width: 70%;
+  font: 400 calc(16px + 4 * (100vw - 300px) / 700)/calc(32px + 4 * (100vw - 300px) / 700) "Raleway", sans-serif;
+}
+main article section:nth-child(2) .symbolism-wrap .symbolism img {
+  height: calc(8vw + 8vh);
+  filter: drop-shadow(0 0 2px #fafafa);
+  animation: infinite 12s ease-in-out rotate;
+  transition: filter 0.8s;
+}
+main article section:nth-child(2) .symbolism-wrap .symbolism:hover img {
+  filter: drop-shadow(0 0 8px #fafafa);
+  transition: filter 0.8s;
+}
+main article section:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: calc(1vw + 8vh) calc(4vw + 2vh);
+}
+main article section:nth-child(3) h2 {
+  display: block;
+  width: 100%;
+  font: 400 calc(32px + 4 * (100vw - 300px) / 700) "Cinzel", serif;
+  text-align: center;
+}
+main article section:nth-child(3) .gallery {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+  border-radius: 10px;
+  background: #1a1a1a;
+}
+main article section:nth-child(3) .gallery figure {
+  position: relative;
+  margin: 0 calc(2vw + 1vh);
+}
+main article section:nth-child(3) .gallery figure img {
+  width: 40vh;
+  height: 60vh;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #b7b7b7;
+  filter: brightness(0.75) grayscale(0.75);
+  transition: filter 1.2s;
+}
+main article section:nth-child(3) .gallery figure:hover img {
+  filter: none;
+  transition: filter 1.2s;
+}
+main article section:nth-child(3) .gallery figure:hover figcaption {
+  transform: translateY(-8vh);
+  transition: transform 0.3s;
+}
+main article section:nth-child(3) .gallery figure figcaption {
+  position: absolute;
+  width: 100%;
+  font: 400 calc(10px + 4 * (100vw - 300px) / 700) "Cinzel", serif;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 0.3s;
+}
+
+footer {
+  z-index: 9;
+  position: relative;
+  background-color: #292929;
+}
+footer ul {
+  width: 100vw;
+  height: calc(1vw + 6vh);
+  padding: 0 5vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer ul a, footer ul li {
+  font: 400 calc(10px + 4 * (100vw - 300px) / 700) "Raleway", sans-serif;
+  color: #cacaca;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  header .logo {
+    justify-content: center;
+    width: 100%;
+  }
+  header nav {
+    display: none;
+  }
+  header .mobile {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: calc(1vw + 5vh);
+    height: calc(1vw + 6vh);
+  }
+  header .mobile div {
+    position: absolute;
+    width: calc(0.6vw + 3vh);
+    border: 1px solid #b7b7b7;
+    transition: transform 0.3s;
+  }
+  header .mobile div:nth-child(1) {
+    transform: translateY(-10px);
+  }
+  header .mobile div:nth-child(2) {
+    transform: translateY(0px);
+  }
+  header .mobile div:nth-child(3) {
+    transform: translateY(10px);
+  }
+  main aside {
+    width: 50vw;
+    transform: translateX(-150%);
+    transition: transform 0.3s;
+  }
+  main aside a {
+    font-size: calc(16px + 4 * (100vw - 300px) / 700);
+  }
+  main article {
+    margin-left: 0;
+    transition: filter 0.3s;
+  }
+  main article section {
+    width: 100vw;
+  }
+  main article section:nth-child(1) h2 {
+    width: 75%;
+    margin-bottom: calc(2vw + 4vh);
+    font-size: calc(32px + 4 * (100vw - 300px) / 700 + 4px);
+  }
+  main article section:nth-child(1) p {
+    width: 75%;
+    font-size: calc(16px + 4 * (100vw - 300px) / 700 + 4px);
+  }
+}/*# sourceMappingURL=style.css.map */
